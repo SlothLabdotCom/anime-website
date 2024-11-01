@@ -26,9 +26,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Script src="/register-sw.js" />
-
       <body className={inter.className}>
-        <Analytics /> {/* Vercel */}
+        <Analytics />
         <StoreProvider>
           <Header />
 

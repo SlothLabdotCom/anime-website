@@ -56,27 +56,9 @@ export default function UserModal({ onClick, auth }: ModalTypes) {
     message: string;
   } | null>(null);
 
-  const googleProvider = new GoogleAuthProvider();
   // const githubProvider = new GithubAuthProvider()
 
   const [user] = useAuthState(auth);
-
-  const signInGoogle = async () => {
-    await signInWithPopup(auth, googleProvider)
-      .then(
-        async (res) =>
-          await createNewUserDocument({
-            userFirebase: res.user,
-            openMenuFunctionHook: setIsSettingsMenuOpen,
-          })
-      )
-      .catch((err) => {
-        setLoginError({
-          code: err.code,
-          message: err.message,
-        });
-      });
-  };
 
   // const signInGithub = async () => {
   //     await signInWithPopup(auth, githubProvider)
@@ -227,7 +209,6 @@ export default function UserModal({ onClick, auth }: ModalTypes) {
           <LoginAlternativesButtons
             // withGitHub={() => signInGithub()}
             anonymously={() => signAnonymously()}
-            withGoogle={() => signInGoogle()}
             withAnilist={() => signWithAnilist()}
           />
 
@@ -384,27 +365,14 @@ export default function UserModal({ onClick, auth }: ModalTypes) {
 }
 
 function LoginAlternativesButtons({
-  withGoogle,
   anonymously,
   withAnilist,
 }: {
-  withGoogle: () => void;
   anonymously: () => void;
   withAnilist: () => void;
 }) {
   return (
     <div id={styles.login_buttons_container}>
-      <div>
-        <button
-          title="Google"
-          id={styles.google_button}
-          onClick={() => withGoogle()}
-        >
-          <GoogleSvg width={16} height={16} alt={"Google icon"} />
-        </button>
-        <small>Google</small>
-      </div>
-
       <div>
         <button
           title="Anonymously"

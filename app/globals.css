@@ -40,14 +40,14 @@
   --black-25: rgba(8, 33, 48, 0.25);
   --black-05: rgba(8, 33, 48, 0.05);
 
-  --error: #f44336;
+  --error: #A44BC7;
 
-  --brand-color: #ff1a75;
-  --brand-dark-color: #3b0018;
+  --brand-color: #BA66DB;
+  --brand-dark-color: #742893;
 
-  --pink-variant-1: #ff5ebc;
-  --pink-variant-2: #ff0095;
-  --pink-variant-3: #ffa2c8;
+  --pink-variant-1: #BA66DB;
+  --pink-variant-2: #BA66DB;
+  --pink-variant-3: #BA66DB;
 
 }
 
