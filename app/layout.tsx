@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import StoreProvider from "./lib/redux/StoreProvider";
 import LoadingPageContainer from "./components/LoadingContainer";
+import GoogleAnalytics from "./googleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
