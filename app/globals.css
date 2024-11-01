@@ -1,3 +1,28 @@
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--white-25); /* Track color */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #BA66DB; /* Scrollbar color */
+    border-radius: var(--btn-border-radius); /* Rounded corners */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #A44BC7; /* Scrollbar color on hover */
+  }
+
+  /* To ensure it applies only on mobile devices */
+  @media screen and (max-width: var(--breakpoint-xl)) {
+    ::-webkit-scrollbar {
+      display: block; /* Display the scrollbar */
+    }
+  }
+
 :root {
   --max-width: 1380px;
 
