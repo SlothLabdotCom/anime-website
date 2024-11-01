@@ -44,14 +44,11 @@ function NavLinks() {
           <h5>About</h5>
 
           <ul>
-            <li>
-              <Link
-                href="https://github.com/ErickLimaS/anime-website/"
-                target="_blank"
-              >
-                This Project
-              </Link>
-            </li>
+          <li>
+            <span>
+              This Project
+            </span>
+          </li>
 
             {/* What about leave a link to the creator's repository? /}
                 {/* 😊 */}
@@ -88,14 +85,14 @@ function NavLinks() {
               </Link>
             </li>
             {/* REMOVE THE ITEM BELLOW IF YOU FORKED THIS PROJECT */}
-            <li>
+            {/* <li>
               <Link
                 href="https://www.fiverr.com/erick_limas/create-a-responsive-landpage-using-react-next-js-javascript-or-typescript"
                 target="_blank"
               >
                 Want a website?
               </Link>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
