@@ -19,157 +19,152 @@ function PlaylistItemsResults({
   params?: { format: string; sort: "title_desc" | "title_asc" };
 }) {
   const anilistUser = useAppSelector((state) => state.UserInfo.value);
-
   const auth = getAuth();
   const [user, loading] = useAuthState(auth);
-
-  const [userBookmarksList, setUserBookmarksList] = useState<BookmarkItem[]>(
-    []
-  );
-  const [userFilteredBookmarks, setUserFilteredBookmarks] = useState<
-    BookmarkItem[]
-  >([]);
-
+  const [isLoading, setIsLoading] = useState(true);
+  
+  const [userBookmarksList, setUserBookmarksList] = useState<BookmarkItem[]>([]);
+  const [userFilteredBookmarks, setUserFilteredBookmarks] = useState<BookmarkItem[]>([]);
+  
   const dispatch = useAppDispatch();
-
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    setUserFilteredBookmarks([]);
-  }, [searchParams.size == 0]);
+    if (searchParams.size === 0) {
+      setUserFilteredBookmarks([]);
+    }
+  }, [searchParams.size]);
 
   useEffect(() => {
-    if (user || anilistUser) getUserBookmarksList();
-  }, [user, anilistUser]);
-
-  useEffect(() => {
-    if (!user && !anilistUser && !loading)
-      dispatch(toggleShowLoginModalValue());
+    if (!loading) {
+      if (user || anilistUser) {
+        getUserBookmarksList();
+      } else {
+        dispatch(toggleShowLoginModalValue());
+      }
+      setIsLoading(false);
+    }
   }, [user, anilistUser, loading]);
 
   useEffect(() => {
-    if (params?.format) {
+    if (params?.format && userBookmarksList.length > 0) {
       const filteredBookmarks = userBookmarksList.filter(
-        (media) => media.format == params!.format.toUpperCase()
+        (media) => media.format === params.format.toUpperCase()
       );
-
       setUserFilteredBookmarks(filteredBookmarks);
     }
-  }, [params?.format]);
+  }, [params?.format, userBookmarksList]);
 
   useEffect(() => {
-    let filteredBookmarks = !params?.format
-      ? userBookmarksList
-      : userFilteredBookmarks;
+    if (!params?.sort) return;
 
-    if (params?.sort) {
-      if (params.sort == "title_desc")
-        filteredBookmarks = filteredBookmarks.sort((a, b) =>
-          a.title.userPreferred > b.title.userPreferred ? -1 : 1
+    setUserFilteredBookmarks((prevBookmarks) => {
+      const bookmarksToSort = [...prevBookmarks];
+      
+      if (params.sort === "title_desc") {
+        return bookmarksToSort.sort((a, b) =>
+          b.title.userPreferred.localeCompare(a.title.userPreferred)
         );
-      else if (params.sort == "title_asc")
-        filteredBookmarks = filteredBookmarks
-          .sort((a, b) =>
-            a.title.userPreferred > b.title.userPreferred ? -1 : 1
-          )
-          .reverse();
-    }
-
-    setUserFilteredBookmarks(filteredBookmarks);
+      } else if (params.sort === "title_asc") {
+        return bookmarksToSort.sort((a, b) =>
+          a.title.userPreferred.localeCompare(b.title.userPreferred)
+        );
+      }
+      return prevBookmarks;
+    });
   }, [params?.sort]);
 
   async function getUserBookmarksList() {
-    const db = getFirestore(initFirebase());
+    try {
+      setIsLoading(true);
+      const db = getFirestore(initFirebase());
+      const docRef = doc(db, "users", user?.uid || `${anilistUser?.id}`);
+      const docSnap = await getDoc(docRef);
 
-    const bookmarksList: BookmarkItem[] = await getDoc(
-      doc(db, "users", user?.uid || `${anilistUser?.id}`)
-    ).then((doc) => doc.get("bookmarks"));
+      if (!docSnap.exists()) {
+        console.log("No bookmarks found for user");
+        setUserBookmarksList([]);
+        setUserFilteredBookmarks([]);
+        return;
+      }
 
-    if (!params) {
-      setUserFilteredBookmarks([]);
+      const bookmarksList: BookmarkItem[] = docSnap.get("bookmarks") || [];
       setUserBookmarksList(bookmarksList);
 
-      return;
-    }
+      if (!params) {
+        setUserFilteredBookmarks([]);
+        return;
+      }
 
-    let filteredBookmarks = bookmarksList;
+      let filteredBookmarks = [...bookmarksList];
 
-    if (params?.format)
-      filteredBookmarks = filteredBookmarks.filter(
-        (item) => item.format == params.format.toUpperCase()
-      );
-
-    if (params?.sort) {
-      if (params.sort == "title_desc")
-        filteredBookmarks = filteredBookmarks.sort((a, b) =>
-          a.title.romaji > b.title.romaji ? -1 : 1
+      if (params.format) {
+        filteredBookmarks = filteredBookmarks.filter(
+          (item) => item.format === params.format.toUpperCase()
         );
-      else if (params.sort == "title_asc")
-        filteredBookmarks = filteredBookmarks
-          .sort((a, b) => (a.title.romaji > b.title.romaji ? -1 : 1))
-          .reverse();
-    }
+      }
 
-    setUserFilteredBookmarks(filteredBookmarks);
-    setUserBookmarksList(bookmarksList);
+      if (params.sort) {
+        if (params.sort === "title_desc") {
+          filteredBookmarks.sort((a, b) =>
+            b.title.romaji.localeCompare(a.title.romaji)
+          );
+        } else if (params.sort === "title_asc") {
+          filteredBookmarks.sort((a, b) =>
+            a.title.romaji.localeCompare(b.title.romaji)
+          );
+        }
+      }
+
+      setUserFilteredBookmarks(filteredBookmarks);
+    } catch (error) {
+      console.error("Error fetching bookmarks:", error);
+      setUserBookmarksList([]);
+      setUserFilteredBookmarks([]);
+    } finally {
+      setIsLoading(false);
+    }
   }
+
+  const showNoResults = !isLoading && (
+    userFilteredBookmarks.length === 0 || userBookmarksList.length === 0
+  );
+
+  const bookmarksToShow = params ? userFilteredBookmarks : userBookmarksList;
 
   return (
     <React.Fragment>
-      {loading && (
+      {(loading || isLoading) && (
         <div style={{ height: "400px", width: "100%", display: "flex" }}>
           <SvgLoading width={120} height={120} style={{ margin: "auto" }} />
         </div>
       )}
 
-      {!loading && (
+      {!loading && !isLoading && (
         <div id={styles.container}>
           <ul>
-            {(userFilteredBookmarks.length == 0 ||
-              userBookmarksList?.length == 0) && (
+            {showNoResults && (
               <p className={styles.no_results_text}>No Results</p>
             )}
 
-            {params
-              ? userFilteredBookmarks.length > 0 &&
-                userFilteredBookmarks.map((media, key) => (
-                  <li key={key}>
-                    <MediaCard.Container onDarkMode>
-                      <MediaCard.MediaImgLink
-                        hideOptionsButton
-                        mediaInfo={media as MediaData}
-                        mediaId={media.id}
-                        title={media.title.userPreferred}
-                        formatOrType={media.format}
-                        url={media.coverImage.extraLarge}
-                      />
-
-                      <MediaCard.LinkTitle
-                        title={media.title.userPreferred}
-                        id={media.id}
-                      />
-                    </MediaCard.Container>
-                  </li>
-                ))
-              : userBookmarksList.map((media, key) => (
-                <li key={key}>
-                  <MediaCard.Container onDarkMode>
-                    <MediaCard.MediaImgLink
-                      hideOptionsButton
-                      mediaInfo={media as MediaData}
-                      mediaId={media.id}
-                      title={media.title.userPreferred}
-                      formatOrType={media.format}
-                      url={media.coverImage.extraLarge}
-                    />
-
-                    <MediaCard.LinkTitle
-                      title={media.title.userPreferred}
-                      id={media.id}
-                    />
-                  </MediaCard.Container>
-                </li>
-              ))}
+            {bookmarksToShow.map((media, key) => (
+              <li key={key}>
+                <MediaCard.Container onDarkMode>
+                  <MediaCard.MediaImgLink
+                    hideOptionsButton
+                    mediaInfo={media as MediaData}
+                    mediaId={media.id}
+                    title={media.title.userPreferred}
+                    formatOrType={media.format}
+                    url={media.coverImage.extraLarge}
+                  />
+                  <MediaCard.LinkTitle
+                    title={media.title.userPreferred}
+                    id={media.id}
+                  />
+                </MediaCard.Container>
+              </li>
+            ))}
           </ul>
         </div>
       )}

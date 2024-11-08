@@ -229,14 +229,14 @@ function HeroCarousel({
                   </div>
 
                   <div className={styles.item_buttons}>
-                    <Link
-                      href={`/media/${animesList[currMediaOnScreenIndex]?.id}`}
-                    >
-                      {animesList[currMediaOnScreenIndex].format == "MANGA"
-                        ? "READ"
-                        : "WATCH"}{" "}
+                  {animesList && animesList[currMediaOnScreenIndex] && (
+                    <Link href={`/media/${animesList[currMediaOnScreenIndex].id}`}>
+                      {animesList[currMediaOnScreenIndex].format === "MANGA" ? "READ" : "WATCH"} 
+
                       NOW
+
                     </Link>
+                  )}
 
                     <AddToFavourites.Button
                       mediaInfo={animesList[currMediaOnScreenIndex]}

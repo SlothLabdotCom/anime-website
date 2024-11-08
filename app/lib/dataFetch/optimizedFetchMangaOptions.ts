@@ -16,25 +16,30 @@ export async function getClosestMangaResultByTitle(
     .sort((a, b) => Number(a.lastChapter) - Number(b.lastChapter))
     .reverse();
 
+  // Ensure closestResults is defined and is an array
+  if (!Array.isArray(closestResults)) {
+    return searchResultsForMedia ? searchResultsForMedia[0]?.id : null;
+  }
+
   // RETURNS RESULT WITH SAME TITLE, CHAPTERS or VOLUMES
   const resultByTitle = closestResults.find(
     (item) => item.title.toLowerCase() == mediaInfo.title.english.toLowerCase()
   )?.id;
+
   const resultByChapter = closestResults.find(
     (item) => Number(item.lastChapter) == Number(mediaInfo.chapters)
   )?.id;
+
   const resultByVolumes = closestResults.find(
     (item) => Number(item.lastVolume) == Number(mediaInfo.volumes)
   )?.id;
 
-  if (closestResults) {
-    return (
-      resultByTitle ||
-      resultByChapter ||
-      resultByVolumes ||
-      closestResults[0].id
-    );
-  }
-
-  return searchResultsForMedia ? searchResultsForMedia[0]?.id : null;
+  // If there are closest results, return the found ID or the first one
+  return (
+    resultByTitle ||
+    resultByChapter ||
+    resultByVolumes ||
+    closestResults[0]?.id ||
+    null
+  );
 }
