@@ -13,7 +13,7 @@ function ErrorPage({
   reset: () => void;
 }) {
   useEffect(() => {
-    console.error(error);
+    //console.error(error);
   }, [error]);
 
   const pathname = usePathname();
@@ -28,7 +28,7 @@ function ErrorPage({
         <h1>Something went wrong!</h1>
 
         <p>
-          Sometimes is due to the API Hosting! <b>Reloading Page Might Work!</b>
+          <b>Reloading Page Might Work!</b>
         </p>
 
         {pathname.slice(0, 6) == "/watch" && (

@@ -29,7 +29,7 @@ export default {
 
       return data as News[];
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return null;
     }
@@ -45,7 +45,7 @@ export default {
 
       return data as News;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return err;
     }

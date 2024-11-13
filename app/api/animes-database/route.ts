@@ -4,6 +4,7 @@ import { MediaOnJSONFile } from "@/app/ts/interfaces/jsonMediaData";
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
+  const CONSUMET_API_URL = process.env.NEXT_PUBLIC_CONSUMET_API_URL;
 
   const resultsLimit = 12;
 

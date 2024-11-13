@@ -33,7 +33,7 @@ export const searchMediaOnIMDB = cache(
 
       return data;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return null;
     }
@@ -79,7 +79,7 @@ export const getMediaInfoOnIMDB = cache(
 
       return data as ImdbMediaInfo;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return null;
     }

@@ -206,7 +206,7 @@ export default function UserModal({ onClick, auth }: ModalTypes) {
           <LoginAlternativesButtons
             // withGitHub={() => signInGithub()}
             anonymously={() => signAnonymously()}
-            withAnilist={() => signWithAnilist()}
+            //withAnilist={() => signWithAnilist()}
           />
 
           <div id={styles.span_container}>
@@ -363,10 +363,10 @@ export default function UserModal({ onClick, auth }: ModalTypes) {
 
 function LoginAlternativesButtons({
   anonymously,
-  withAnilist,
+  //withAnilist,
 }: {
   anonymously: () => void;
-  withAnilist: () => void;
+  //withAnilist: () => void;
 }) {
   return (
     <div id={styles.login_buttons_container}>
@@ -390,7 +390,7 @@ function LoginAlternativesButtons({
                 </div> 
             */}
 
-      <div>
+      {/* <div>
         <button
           title="Anilist"
           id={styles.anilist_button}
@@ -399,7 +399,7 @@ function LoginAlternativesButtons({
           <AnilistSvg width={16} height={16} alt={"Anilist icon"} />
         </button>
         <small>Anilist</small>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -12,7 +12,7 @@ export default {
 
       return setCookieResult;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return err;
     }
@@ -28,7 +28,7 @@ export default {
 
       return setAdultContentResult;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return err;
     }
@@ -44,7 +44,7 @@ export default {
 
       return setAdultContentResult;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return err;
     }
@@ -64,7 +64,7 @@ export default {
 
       return setPlayWrongMedia;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return err;
     }

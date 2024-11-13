@@ -333,7 +333,7 @@ function NotificationsContainer() {
           } as unknown as FieldPath,
           { merge: true }
         ).catch((err) => {
-          return console.log(err);
+          //return console.log(err);
         });
 
         // then adds new data to media notification
@@ -357,7 +357,7 @@ function NotificationsContainer() {
           } as unknown as FieldPath,
           { merge: true }
         ).catch((err) => {
-          return console.log(err);
+          //return console.log(err);
         });
       });
     }
@@ -372,7 +372,7 @@ function NotificationsContainer() {
           } as unknown as FieldPath,
           { merge: true }
         ).catch((err) => {
-          return console.log(err);
+          //return console.log(err);
         });
 
         // add new data to notification media
@@ -383,7 +383,7 @@ function NotificationsContainer() {
           } as unknown as FieldPath,
           { merge: true }
         ).catch((err) => {
-          return console.log(err);
+          //return console.log(err);
         });
       });
     }

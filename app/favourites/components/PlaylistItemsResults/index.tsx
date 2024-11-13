@@ -82,7 +82,7 @@ function PlaylistItemsResults({
       const docSnap = await getDoc(docRef);
 
       if (!docSnap.exists()) {
-        console.log("No bookmarks found for user");
+        //console.log("No bookmarks found for user");
         setUserBookmarksList([]);
         setUserFilteredBookmarks([]);
         return;
@@ -118,7 +118,7 @@ function PlaylistItemsResults({
 
       setUserFilteredBookmarks(filteredBookmarks);
     } catch (error) {
-      console.error("Error fetching bookmarks:", error);
+      //console.error("Error fetching bookmarks:", error);
       setUserBookmarksList([]);
       setUserFilteredBookmarks([]);
     } finally {

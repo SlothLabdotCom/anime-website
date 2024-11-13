@@ -44,7 +44,7 @@ function NavigationSideBar({ params }: { params?: { format: string } }) {
       const docSnap = await getDoc(docRef);
       
       if (!docSnap.exists()) {
-        console.log("No bookmarks found for user");
+        //console.log("No bookmarks found for user");
         return;
       }
 
@@ -57,7 +57,7 @@ function NavigationSideBar({ params }: { params?: { format: string } }) {
         movie: bookmarksList.filter((media) => media.format === "MOVIE").length,
       });
     } catch (error) {
-      console.error("Error fetching bookmarks:", error);
+      //console.error("Error fetching bookmarks:", error);
     }
   }
 

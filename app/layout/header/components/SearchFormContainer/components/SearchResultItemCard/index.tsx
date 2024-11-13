@@ -50,7 +50,7 @@ function SearchResultItemCard({
     ? mediaFromAnilist.type
     : mediaFromOfflineDB?.type || "No Type Defined";
 
-  console.log(mediaFromAnilist);
+  //console.log(mediaFromAnilist);
 
   return (
     <li

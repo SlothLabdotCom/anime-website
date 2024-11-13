@@ -39,7 +39,7 @@ export default {
           | GogoanimeMediaSearchResult[]
           | MangadexMangaSearchResult[];
       } catch (error) {
-        console.log(error);
+        //console.log(error);
 
         return null;
       }
@@ -56,7 +56,7 @@ export default {
 
       return data as GogoanimeMediaData | MangadexMangaInfo;
     } catch (error) {
-      console.log(error);
+      //console.log(error);
 
       return null;
     }
@@ -81,7 +81,7 @@ export default {
 
         return data;
       } catch (error) {
-        console.log(error);
+        //console.log(error);
 
         return null;
       }

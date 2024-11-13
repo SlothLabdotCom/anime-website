@@ -33,7 +33,7 @@ export default {
         
         return data.data as MediaInfoFetchedAnimeWatch;
       } catch (error) {
-        console.log((error as Error).message);
+        //console.log((error as Error).message);
 
         return null;
       }
@@ -49,7 +49,7 @@ export default {
 
       return data.data as EpisodesFetchedAnimeWatch;
     } catch (error) {
-      console.log((error as Error).message);
+      //console.log((error as Error).message);
 
       return null;
     }
@@ -72,7 +72,7 @@ export default {
 
         return data.data as EpisodeLinksAnimeWatch;
       } catch (error) {
-        console.log((error as Error).message);
+        //console.log((error as Error).message);
 
         return null;
       }

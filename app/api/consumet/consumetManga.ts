@@ -34,7 +34,7 @@ export default {
 
         return data.results as MangadexMangaSearchResult[];
       } catch (error) {
-        console.log(error);
+        //console.log(error);
 
         return null;
       }
@@ -58,7 +58,7 @@ export default {
 
       return data as MangadexMangaInfo;
     } catch (error) {
-      console.log(error);
+      //console.log(error);
 
       return null;
     }
@@ -74,7 +74,7 @@ export default {
 
       return data as MangadexMangaPages[];
     } catch (error) {
-      console.log(error);
+      //console.log(error);
 
       return null;
     }

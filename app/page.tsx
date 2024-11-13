@@ -229,7 +229,7 @@ export default async function Home() {
       </main>
     );
   } catch (error) {
-    console.error("Error fetching data:", error);
+    //console.error("Error fetching data:", error);
     // You might want to return a error page or fallback UI here
     return (
       <main id={styles.container} className={styles.main}>

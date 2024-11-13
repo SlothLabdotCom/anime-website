@@ -112,7 +112,7 @@ export default {
 
         return data.data.Page.media as MediaData[];
       } catch (error) {
-        console.log((error as Error).message);
+        //console.log((error as Error).message);
 
         return null;
       }
@@ -157,7 +157,7 @@ export default {
           ? (data.data.Page.media as MediaData[])
           : filterMediasWithAdultContent(data.data.Page.media, "mediaByFormat");
       } catch (error) {
-        console.log((error as Error).message);
+        //console.log((error as Error).message);
 
         return null;
       }
@@ -207,7 +207,7 @@ export default {
 
         return data.data.Page.media as MediaData[];
       } catch (error) {
-        console.log((error as Error).message);
+        //log((error as Error).message);
 
         return null;
       }
@@ -264,7 +264,7 @@ export default {
             data.data.Page.airingSchedules
           ) as AiringMediaResult[]);
       } catch (error) {
-        console.log((error as Error).message);
+        //console.log((error as Error).message);
 
         return null;
       }
@@ -310,7 +310,7 @@ export default {
 
         return data.data.Page.mediaTrends as TrendingMediaResult[];
       } catch (error) {
-        console.log((error as Error).message);
+        //console.log((error as Error).message);
 
         return null;
       }
@@ -364,7 +364,7 @@ export default {
             "mediaByFormat"
           ) as MediaData[]);
       } catch (error) {
-        console.log((error as Error).message);
+        //console.log((error as Error).message);
 
         return null;
       }
@@ -395,7 +395,7 @@ export default {
 
         return data.data.Media as MediaData;
       } catch (error) {
-        console.log((error as Error).message);
+        //console.log((error as Error).message);
 
         return null;
       }

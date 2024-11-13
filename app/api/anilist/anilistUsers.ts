@@ -96,7 +96,7 @@ export default {
 
       return data;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return err;
     }
@@ -193,7 +193,7 @@ export default {
 
         return userDocFetchedOrCreated || undefined;
       } catch (err) {
-        console.log(err);
+        //console.log(err);
 
         return undefined;
       }
@@ -290,7 +290,7 @@ export default {
 
         return userDataFromAnilist;
       } catch (error) {
-        console.log((error as Error).message);
+        //console.log((error as Error).message);
 
         return (error as Error).message;
       }
@@ -332,7 +332,7 @@ export default {
 
       return data;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return null;
     }
@@ -385,7 +385,7 @@ export default {
 
       return data;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return null;
     }
@@ -417,7 +417,7 @@ export default {
 
       return data;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return null;
     }
@@ -450,7 +450,7 @@ export default {
 
       return cookieSetResult;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return null;
     }
@@ -484,7 +484,7 @@ export default {
 
       return cookieSetResult;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return null;
     }
@@ -497,7 +497,7 @@ export default {
 
       return cookieSetResult;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return null;
     }
@@ -515,7 +515,7 @@ export default {
 
       return cookieSetResult;
     } catch (err) {
-      console.log(err);
+      //console.log(err);
 
       return null;
     }

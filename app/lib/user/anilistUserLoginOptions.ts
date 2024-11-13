@@ -87,7 +87,7 @@ export async function addUserCookies({
       playWrongMedia: playWrongMedia,
     });
   } catch (err) {
-    console.log(err);
+    //console.log(err);
 
     return err;
   }
@@ -111,7 +111,7 @@ export async function removeCookies() {
       `${process.env.NEXT_PUBLIC_WEBSITE_ORIGIN_URL}/api/anilist`
     );
   } catch (err) {
-    console.log(err);
+    //console.log(err);
 
     return err;
   }

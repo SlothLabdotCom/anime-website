@@ -314,3 +314,24 @@ export const queryRecommendationsByCurrMediaUserAuthenticated = `recommendations
                                             }
                                         }
                                     }`;
+
+export const queryMediaReviews = `reviews {
+                                        nodes {
+                                            summary
+                                            body(asHtml: true)
+                                            rating
+                                            userRating
+                                            ratingAmount
+                                            user {
+                                                id
+                                                name
+                                                about
+                                                avatar {
+                                                    large
+                                                    medium
+                                                }
+                                                bannerImage
+                                            }
+                                        }
+                                    }
+                                    `;
