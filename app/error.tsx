@@ -37,9 +37,9 @@ function ErrorPage({
           </p>
         )}
 
-        <span>
+        {/* <span>
           <b>{error.name}</b>: {error.message}
-        </span>
+        </span> */}
       </div>
 
       <div id={styles.buttons_container}>
