@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <Script src="/register-sw.js" />
       <body className={inter.className}>
-        <Script async src="https://s0-greate.net/p/1285698" />
+        <script async type="text/javascript" src="https://s0-greate.net/p/1285698"></script>
         <StoreProvider>
           <Header />
 
