@@ -41,58 +41,30 @@ function NavLinks() {
         <span id={styles.span_border2}></span>
 
         <div id={styles.div_custom_margin}>
-          <h5>About</h5>
+          <h5>Quick Links</h5>
 
           <ul>
-          <li>
-            <span>
-              This Project
-            </span>
-          </li>
-
-            {/* What about leave a link to the creator's repository? /}
-                {/* 😊 */}
-            {/* 
-                <li>
-                  <Link
-                    href="https://github.com/ErickLimaS/anime-website/"
-                    target="_blank"
-                  >
-                    Forked From ErickLimaS
-                  </Link>
-                </li> 
-            */}
+            <li>
+              <Link
+                href="mailto://animeabyss@tuta.io"
+                target="_blank"
+              >
+               Contact
+              </Link>
+            </li>
+            <li>
+              <Link href="/terms">
+                Terms of Service
+              </Link>
+            </li>
 
             <li>
               <Link
-                href="https://anilist.gitbook.io/anilist-apiv2-docs/"
-                target="_blank"
+                href="/dmca"
               >
-                AniList API
+               DMCA
               </Link>
             </li>
-            <li>
-              <Link href="https://docs.consumet.org/" target="_blank">
-                Consumet API
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="https://github.com/ghoshRitesh12/aniwatch-api"
-                target="_blank"
-              >
-                Aniwatch API
-              </Link>
-            </li>
-            {/* REMOVE THE ITEM BELLOW IF YOU FORKED THIS PROJECT */}
-            {/* <li>
-              <Link
-                href="https://www.fiverr.com/erick_limas/create-a-responsive-landpage-using-react-next-js-javascript-or-typescript"
-                target="_blank"
-              >
-                Want a website?
-              </Link>
-            </li> */}
           </ul>
         </div>
       </div>
