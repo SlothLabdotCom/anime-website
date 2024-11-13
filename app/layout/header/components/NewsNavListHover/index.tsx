@@ -23,7 +23,10 @@ function NewsNavListHover() {
   };
 
   function replaceInvalidNewsIdOnUrl(newsId: string) {
-    return newsId.replace(/\/?daily-briefs\//, "");
+    newsId = newsId.replace(/\/?daily-briefs\//, "");
+    newsId = newsId.replace(/\/\.(\d+)$/, "/$1");
+    
+    return newsId;
   }
 
   if (!newsList) {

@@ -46,14 +46,14 @@ function Header() {
               <ChevronDownIcon alt="Open Mangas List" width={16} height={16} />
               <MangaNavListHover />
             </li>
-            {/* <li className="display_flex_row align_items_center">
+            <li className="display_flex_row align_items_center">
               <Link href={"/news"}>
                 News{" "}
                 <ChevronDownIcon alt="Open News List" width={16} height={16} />
               </Link>
 
               <NewsNavListHover />
-            </li> */}
+            </li>
           </ul>
         </div>
 

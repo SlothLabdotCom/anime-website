@@ -8,7 +8,7 @@ function NewsCard({ newsInfo }: { newsInfo: News }) {
   return (
     <div className={styles.hero_news_container}>
       <div className={styles.image_container}>
-        <Link href={`/news/${newsInfo.id.replace(/\/?daily-briefs\//, "")}`}>
+        <Link href={`/news/${newsInfo.id.replace(/\/?daily-briefs\//, "").replace(/\/\.(\d+)$/, "/$1")}`}>
           <Image
             src={newsInfo.thumbnail}
             alt={newsInfo.title}
@@ -29,7 +29,7 @@ function NewsCard({ newsInfo }: { newsInfo: News }) {
         )}
 
         <h2>
-          <Link href={`/news/${newsInfo.id.replace(/\/?daily-briefs\//, "")}`}>
+          <Link href={`/news/${newsInfo.id.replace(/\/?daily-briefs\//, "").replace(/\/\.(\d+)$/, "/$1")}`}>
             {newsInfo.title}
           </Link>
         </h2>

@@ -56,9 +56,7 @@ function SwiperContainer({
               </Link>
 
               <h3>
-                <Link
-                  href={`news/${newsArticle.id.replace(/\/?daily-briefs\//, "")}`}
-                >
+                <Link href={`/news/${newsArticle.id.replace(/\/?daily-briefs\//, "").replace(/\/\.(\d+)$/, "/$1")}`}>
                   {newsArticle.title}
                 </Link>
               </h3>
