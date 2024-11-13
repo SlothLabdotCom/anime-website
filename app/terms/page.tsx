@@ -2,7 +2,7 @@ import React from 'react';
 
 const Terms = () => {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8 text-white text-center p-4" style={{ color: 'white', alignContent: 'center', paddingLeft: 20 }}>
+    <div className="max-w-2xl mx-auto px-4 py-8 text-white text-center p-4" style={{ color: 'white', alignContent: 'center', padding: '9rem 12rem' }}>
       <h1 className="text-lg font-bold mb-6 mt-6 text-white" style={{fontSize: 30, textAlign: 'center', paddingTop: 10}}>
         AnimeAbyss Anime Website Terms and Conditions of Use
       </h1>
@@ -11,8 +11,8 @@ const Terms = () => {
         <h2 className="text-lg font-semibold mb-4 mt-4 text-white" style={{fontSize: 30, paddingTop: 10}}>1. Terms</h2>
         <p className="mb-4 text-sm" style={{fontSize: 15, lineHeight: 1.5, paddingTop: 5}}>
           By accessing this Website, accessible from{' '}
-          <a href="https://hianime.to" target="_blank" className="text-blue-300 hover:text-blue-400">
-            https://hianime.to
+          <a href="https://animeabyss.to" target="_blank" className="text-blue-300 hover:text-blue-400">
+            https://animeabyss.to
           </a>, you are agreeing to be bound by these Website Terms and Conditions of Use and agree
           that you are responsible for the agreement with any applicable local laws. If you disagree with
           any of these terms, you are prohibited from accessing this site. The materials contained in this

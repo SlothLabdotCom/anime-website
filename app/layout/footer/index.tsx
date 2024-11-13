@@ -24,7 +24,7 @@ function Footer() {
               AnimeAbyss does not store any files on our server, we only linked to the media which is hosted on 3rd party services.
             </small>
             <small>
-              &copy; {currentYear} <a href="https://hianime.to/" target="_blank" style={{ color: 'inherit', textDecoration: 'none', fontSize: 13, fontWeight: 'bold' }}>AnimeAbyss.to</a>. All Rights Reserved.
+              &copy; {currentYear} <a href="https://animeabyss.to/" target="_blank" style={{ color: 'inherit', textDecoration: 'none', fontSize: 13, fontWeight: 'bold' }}>AnimeAbyss.to</a>. All Rights Reserved.
             </small>
           </div>
         </div>

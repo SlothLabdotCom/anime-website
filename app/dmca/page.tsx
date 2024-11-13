@@ -2,7 +2,7 @@ import React from 'react';
 
 const DMCA = () => {
   return (
-    <div className="max-w-2xl mx-auto px-4 py-8 text-white text-center p-4" style={{ color: 'white', alignContent: 'center', paddingLeft: 20 }}>
+    <div className="max-w-2xl mx-auto px-4 py-8 text-white text-center p-4" style={{ color: 'white', alignContent: 'center', padding: '9rem 12rem' }}>
       <h1 className="text-lg font-bold mb-6 mt-6 text-white" style={{fontSize: 30, paddingTop: 20}}>
          DMCA takedown request requirements
       </h1>
@@ -30,16 +30,13 @@ const DMCA = () => {
       <p className="mb-4 text-sm" style={{ fontSize: 15, lineHeight: 2, paddingTop: 5 }}>
         Your DMCA take down request should be submitted here:{" "}
         <a href="mailto://animeabyss@tuta.io" target="_blank" className="text-blue-500 hover:text-blue-700">
-            https://animeabyss@tuta.io
+            animeabyss@tuta.io
         </a>
         <br />
         We will then review your DMCA request and take proper actions, including removal of the content from the website.
         </p>
 
       </section>
-
-      
-     
     </div>
   );
 };
