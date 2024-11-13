@@ -4,10 +4,10 @@ import "./globals.css";
 import Header from "./layout/header";
 import Footer from "./layout/footer";
 import NextTopLoader from "nextjs-toploader";
-import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import StoreProvider from "./lib/redux/StoreProvider";
 import LoadingPageContainer from "./components/LoadingContainer";
+import GoogleAnalytics from "./googleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Script src="/register-sw.js" />
+      <GoogleAnalytics />
       <body className={inter.className}>
         <script async type="text/javascript" src="https://s0-greate.net/p/1285698"></script>
         <StoreProvider>
