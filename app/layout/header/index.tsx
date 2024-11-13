@@ -26,7 +26,7 @@ function Header() {
             <Image
               id={styles.logo}
               src={"/logo.png"}
-              alt="AniProject Website Logo"
+              alt="AnimeAbyss.to Website Logo"
               fill
               sizes="110px"
             />

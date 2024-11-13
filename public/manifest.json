@@ -1,8 +1,8 @@
 {
- "name": "AniProject",
- "short_name": "AniProject",
- "theme_color": "#030f16",
- "background_color": "#030f16",
+ "name": "AnimeAbyss.to",
+ "short_name": "AnimeAbyss.to",
+ "theme_color": "#ba66db",
+ "background_color": "#ba66db",
  "display": "standalone",
  "scope": "/",
  "start_url": "/",
@@ -10,7 +10,7 @@
  "icons": [
    {
      "src": "/icon.png",
-     "sizes": "512x512",
+     "sizes": "126x126",
      "type": "image/png"
    }
  ]

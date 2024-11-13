@@ -17,13 +17,13 @@ import PopularMediaSection from "./components/HomePage/PopularMediaSection";
 export const revalidate = 21600; // revalidate cached data every 6 hours
 
 export const metadata: Metadata = {
-  title: "Home | AniProject",
+  title: "Home | AnimeAbyss.to",
   description:
     "A anime platform that showcases popular and trending animes, mangas and movies. Explore the latest releases, keep watching your favorites, and discover what's popular in the anime world.",
   keywords: [
-    "Aniproject",
-    "Ani project",
-    "Ani project github",
+    "AnimeAbyss",
+    "Anime Abyss",
+    "Ani abyss to",
     "Animes",
     "Anime Reviews",
     "Latest Anime Releases",

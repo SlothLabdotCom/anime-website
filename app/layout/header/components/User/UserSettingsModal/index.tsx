@@ -511,7 +511,7 @@ function UserSettingsModal({
                 </label>
               )}
               <small>
-                Only works with <b>Aniwatch</b>
+                Only works with <b>AnimeAbyss</b>
               </small>
             </div>
 
@@ -560,7 +560,7 @@ function UserSettingsModal({
                       <span />
                     </label>
                     <p>
-                      Skip Openings And Endings (<b>Aniwatch only!</b>)
+                      Skip Openings And Endings (<b>AnimeAbyss only!</b>)
                     </p>
                   </div>
 

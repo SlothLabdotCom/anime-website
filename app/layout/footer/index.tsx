@@ -21,7 +21,10 @@ function Footer() {
         <div className="center display_flex_row">
           <div>
             <small>
-              &copy; {currentYear}, <a href="https://hianime.to/" target="_blank" style={{ color: 'inherit', textDecoration: 'none', fontSize: 13, fontWeight: 'bold' }}>AnimeAbyss</a>. All Rights Reserved.
+              AnimeAbyss does not store any files on our server, we only linked to the media which is hosted on 3rd party services.
+            </small>
+            <small>
+              &copy; {currentYear} <a href="https://hianime.to/" target="_blank" style={{ color: 'inherit', textDecoration: 'none', fontSize: 13, fontWeight: 'bold' }}>AnimeAbyss.to</a>. All Rights Reserved.
             </small>
           </div>
         </div>

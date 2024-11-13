@@ -9,7 +9,7 @@ function FooterHeading() {
       <Link id={styles.img_container} href="/">
         <Image
           src="/logo.png"
-          alt="Aniproject Site Logo"
+          alt="AnimeAbyss.to Site Logo"
           fill
           sizes="91px"
         ></Image>

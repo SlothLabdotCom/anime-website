@@ -43,17 +43,17 @@ function HeroCarousel({
 }) {
   const [[page, direction], setPage] = useState([0, 0]);
 
-  const [autoPlayTrailer, setAutoPlayTrailer] = useState<boolean>(true);
+  const [autoPlayTrailer, setAutoPlayTrailer] = useState<boolean>(false);
 
   useEffect(() => {
     if (localStorage.getItem("autoPlayTrailer") == undefined) {
-      setAutoPlayTrailer(true);
-      localStorage.setItem("autoPlayTrailer", "true");
+      setAutoPlayTrailer(false);
+      localStorage.setItem("autoPlayTrailer", "false");
 
       return;
     }
 
-    setAutoPlayTrailer(localStorage.getItem("autoPlayTrailer") == "true");
+    setAutoPlayTrailer(localStorage.getItem("autoPlayTrailer") == "false");
   }, []);
 
   // Slide Carousel Props

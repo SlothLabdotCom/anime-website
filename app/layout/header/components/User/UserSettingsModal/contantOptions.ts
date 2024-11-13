@@ -149,9 +149,9 @@ export const titlePrefferedLanguages = [
 ];
 
 export const sourcesOptions = [
-  { name: "Crunchyroll", value: "crunchyroll" },
+  { name: "AnimeAbyss", value: "aniwatch" },
   { name: "GoGoAnime", value: "gogoanime" },
-  { name: "Aniwatch", value: "aniwatch" },
+  { name: "Crunchyroll", value: "crunchyroll" },
 ];
 
 export const qualityOptions = [

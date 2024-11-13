@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { id: number } }) {
   })) as MediaDataFullInfo;
 
   return {
-    title: `${mediaData.title.romaji || mediaData.title.native} | AniProject`,
+    title: `${mediaData.title.romaji || mediaData.title.native} | AnimeAbyss.to`,
     description:
       mediaData.description ||
       `See more info about ${mediaData.title.romaji || mediaData.title.native}`,
