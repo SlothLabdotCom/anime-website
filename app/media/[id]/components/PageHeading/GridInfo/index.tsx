@@ -25,11 +25,11 @@ export default function GridHeadingMediaInfo({
       return "COMPLETE";
     }
 
-    return stringToOnlyAlphabetic(status) || "Not Available";
+    return stringToOnlyAlphabetic(status) || "N/A";
   }
 
   function getEpisodesQuantity() {
-    return imdbEpisodes?.length || mediaInfo.episodes || "Not Available";
+    return imdbEpisodes?.length || mediaInfo.episodes || "N/A";
   }
 
   return (
@@ -54,7 +54,7 @@ export default function GridHeadingMediaInfo({
 
             <p>
               {stringToOnlyAlphabetic(mediaInfo.source.toUpperCase()) ||
-                "Not Available"}
+                "N/A"}
             </p>
           </li>
         ) : (
@@ -65,7 +65,7 @@ export default function GridHeadingMediaInfo({
 
             <h2>STATUS</h2>
 
-            <p>{convertMediaStatus(mediaInfo.status || "Not Available")}</p>
+            <p>{convertMediaStatus(mediaInfo.status || "N/A")}</p>
           </li>
         )}
 
@@ -91,7 +91,7 @@ export default function GridHeadingMediaInfo({
 
             <h2>VOLUMES</h2>
 
-            <p>{mediaInfo.volumes || "Not Available"}</p>
+            <p>{mediaInfo.volumes || "N/A"}</p>
           </li>
         )}
 
@@ -120,8 +120,8 @@ export default function GridHeadingMediaInfo({
 
               <p>
                 {mediaInfo.duration == null
-                  ? "Not Available"
-                  : `${mediaInfo.duration} min` || "Not Available"}
+                  ? "N/A"
+                  : `${mediaInfo.duration} min` || "N/A"}
               </p>
             </React.Fragment>
           )}
@@ -134,7 +134,7 @@ export default function GridHeadingMediaInfo({
 
               <h2>CHAPTERS</h2>
 
-              <p>{mediaInfo.chapters || "Not Available"}</p>
+              <p>{mediaInfo.chapters || "N/A"}</p>
             </React.Fragment>
           )}
         </li>

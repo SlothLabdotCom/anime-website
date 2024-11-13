@@ -366,11 +366,11 @@ export default async function WatchEpisode({
 
           <div className={styles.only_desktop}>
             <div className={styles.comment_container}>
-              <h2>
+              {/* <h2>
                 COMMENTS{" "}
                 {mediaInfo.format != "MOVIE" &&
                   `FOR EPISODE ${searchParams.episode}`}
-              </h2>
+              </h2> */}
 
               {/* SHOW ONLY ON DESKTOP */}
               {/* ADD EPISODE REVIEW */}
@@ -399,11 +399,6 @@ export default async function WatchEpisode({
           {/* ONLY ON MOBILE */}
           <div className={styles.only_mobile}>
             <div className={styles.comment_container}>
-              <h2>
-                COMMENTS{" "}
-                {mediaInfo.format != "MOVIE" &&
-                  `FOR EPISODE ${searchParams.episode}`}
-              </h2>
 
               {/* ADD EPISODE REVIEW */}
             </div>

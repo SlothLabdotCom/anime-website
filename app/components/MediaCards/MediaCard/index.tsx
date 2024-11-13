@@ -39,12 +39,12 @@ export function Container({
 export function MediaInfo({ mediaInfo }: { mediaInfo: MediaData }) {
   return (
     <div className={styles.rank_item_info}>
-      <small>{mediaInfo.seasonYear || "Not Available"}</small>
+      <small>{mediaInfo.seasonYear || "N/A"}</small>
 
       <h4>
         <Link href={`/media/${mediaInfo.id}`}>
           {mediaInfo.title &&
-            (mediaInfo.title.userPreferred || "Not Available")}
+            (mediaInfo.title.userPreferred || "N/A")}
         </Link>
       </h4>
 
