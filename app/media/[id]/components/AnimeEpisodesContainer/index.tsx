@@ -433,9 +433,9 @@ export default function EpisodesContainer({
             showSourceStatus
             sepateBtnsWithSpan={true}
             buttonOptions={[
-              { name: "Crunchyroll", value: "crunchyroll" },
+              { name: "AnimeAbyss", value: "aniwatch" },
               { name: "GoGoAnime", value: "gogoanime" },
-              { name: "Aniwatch", value: "aniwatch" },
+              { name: "Crunchyroll", value: "crunchyroll" },
             ]}
           />
 

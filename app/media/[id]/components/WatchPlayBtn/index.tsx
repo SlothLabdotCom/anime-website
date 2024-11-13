@@ -53,8 +53,8 @@ export default function PlayBtn({
   const router = useRouter();
 
   const sourceOptions = [
+    { name: "AnimeAbyss", value: "aniwatch" },
     { name: "GoGoAnime", value: "gogoanime" },
-    { name: "Aniwatch", value: "aniwatch" },
   ];
 
   useEffect(() => {
