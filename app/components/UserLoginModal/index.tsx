@@ -209,12 +209,6 @@ export default function UserModal({ onClick, auth }: ModalTypes) {
             //withAnilist={() => signWithAnilist()}
           />
 
-          <div id={styles.span_container}>
-            <span></span>
-            <span>or</span>
-            <span></span>
-          </div>
-
           <motion.form
             onSubmit={(e) =>
               formType == "signup" ? handleSignUpForm(e) : handleLoginForm(e)
@@ -362,7 +356,7 @@ export default function UserModal({ onClick, auth }: ModalTypes) {
 }
 
 function LoginAlternativesButtons({
-  anonymously,
+  // anonymously,
   //withAnilist,
 }: {
   anonymously: () => void;
@@ -374,7 +368,7 @@ function LoginAlternativesButtons({
         <button
           title="Anonymously"
           id={styles.anonymous_button}
-          onClick={() => anonymously()}
+          // onClick={() => anonymously()}
         >
           <AnonymousSvg width={16} height={16} alt={"Anonymous icon"} />
         </button>
